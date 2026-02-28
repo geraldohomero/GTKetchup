@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.geraldohomero.GTKetchup</id>
+  <name>GTKetchup</name>
+  <summary>A modern, circular Pomodoro Timer for GNOME</summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      Stay focused and increase your productivity with GTKetchup, a native 
+      GNOME application built with GTK4 and Libadwaita. It features a beautiful, 
+      custom-drawn circular interface that dynamically changes colors the longer 
+      you focus.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Intuitive circular timer with luminous dots</li>
+      <li>Scroll support for quick time adjustments (minutes and seconds)</li>
+      <li>Continuous color transitioning for extended focus sessions</li>
+      <li>System notifications and sounds when time is up</li>
+      <li>Customizable presets and scroll steps</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.github.geraldohomero.GTKetchup.desktop</launchable>
+  
+  <developer id="com.github.geraldohomero">
+    <name>Geraldo Homero</name>
+  </developer>
+
+  <url type="homepage">https://github.com/geraldohomero/GTKetchup</url>
+  <url type="bugtracker">https://github.com/geraldohomero/GTKetchup/issues</url>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/geraldohomero/GTKetchup/main/screenshot.png</image>
+      <caption>The circular Pomodoro Timer interface in action</caption>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="1.0.0" date="2024-10-27">
+      <description>
+        <p>Initial release of GTKetchup.</p>
+        <ul>
+          <li>Scroll to increase minutes, Shift+Scroll for seconds</li>
+          <li>System notifications support</li>
+          <li>Basic settings and tutorial</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

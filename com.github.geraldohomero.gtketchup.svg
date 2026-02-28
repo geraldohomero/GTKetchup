@@ -1,0 +1,49 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer drop shadow for 3D depth -->
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+  </filter>
+
+  <!-- Inner shadow for a recessed 3D look in the center -->
+  <filter id="inner-shadow">
+    <feComponentTransfer in="SourceAlpha">
+      <feFuncA type="linear" slope="0.5"/>
+    </feComponentTransfer>
+    <feGaussianBlur stdDeviation="4" result="blur"/>
+    <feOffset dy="4" dx="0"/>
+    <feComposite operator="in" in2="SourceAlpha"/>
+    <feComposite operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
+    <feFlood flood-color="#000" flood-opacity="0.8"/>
+    <feComposite operator="in" in2="shadowDiff"/>
+    <feComposite operator="over" in2="SourceGraphic"/>
+  </filter>
+
+  <!-- Metallic gradient for the outer ring -->
+  <linearGradient id="metal-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#757575" />
+    <stop offset="50%" stop-color="#424242" />
+    <stop offset="100%" stop-color="#212121" />
+  </linearGradient>
+
+  <!-- Outer beveled ring of the timer, now the main body -->
+  <circle cx="128" cy="128" r="115" fill="url(#metal-ring)" filter="url(#shadow)"/>
+  <circle cx="128" cy="128" r="115" fill="transparent" stroke="#424242" stroke-width="4"/>
+  
+  <!-- Inner recessed dial -->
+  <circle cx="128" cy="128" r="105" fill="#121212" filter="url(#inner-shadow)"/>
+  
+  <!-- Luminous dots background -->
+  <circle cx="128" cy="128" r="85" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="6" stroke-dasharray="10 14"/>
+  
+  <!-- Active luminous line (timer remaining) -->
+  <circle cx="128" cy="128" r="85" stroke="#9E9E9E" stroke-width="6" stroke-dasharray="400 550" transform="rotate(-90 128 128)"/>
+  
+  <!-- App Center / Hands (3D styling with drop shadow) -->
+  <g filter="url(#shadow)">
+    <!-- Hour/Minute hand -->
+    <path d="M128 70 L128 128 L158 158" stroke="#E0E0E0" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Center pin -->
+    <circle cx="128" cy="128" r="12" fill="#757575" stroke="#212121" stroke-width="2"/>
+    <circle cx="128" cy="128" r="5" fill="#E0E0E0"/>
+  </g>
+</svg>
