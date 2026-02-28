@@ -27,7 +27,7 @@ class PomodoroTimer(Gtk.DrawingArea):
         self.set_draw_func(self.on_draw)
 
         # Scroll event
-        scroll = Gtk.EventControllerScroll.new(Gtk.EventControllerScrollFlags.BOTH_AXES | Gtk.EventControllerScrollFlags.KINETIC)
+        scroll = Gtk.EventControllerScroll.new(Gtk.EventControllerScrollFlags.VERTICAL | Gtk.EventControllerScrollFlags.DISCRETE)
         scroll.connect('scroll', self.on_scroll)
         self.add_controller(scroll)
 

@@ -168,7 +168,7 @@ class MyApp(Adw.Application):
                 application_name="GTKetchup",
                 application_icon="com.github.geraldohomero.gtketchup",
                 developer_name="Geraldo Homero",
-                version="1.0.0",
+                version="1.0.1",
                 comments="A native GNOME Pomodoro Timer with custom Cairo visuals, formerly known as Pomodoro Timer.",
                 website="https://github.com/geraldohomero/GTKetchup"
             )
